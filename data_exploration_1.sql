@@ -14,7 +14,7 @@ CREATE TABLE online_retail (      # creating DB table.....
 
 SET GLOBAL local_infile = 1;   # to allow SQL read local files
 
-LOAD DATA LOCAL INFILE 'C:\\Users\\TOCHUKWU IKWELLE\\Desktop\\Online Retail.csv'
+LOAD DATA LOCAL INFILE 'C:\\Users\\TOCHUKWU IKWELLE\\Desktop\\Online Retail.csv'    # path to file
 INTO TABLE online_retail
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -23,4 +23,13 @@ IGNORE 1 ROWS;
 
 SHOW VARIABLES LIKE 'local_infile';   # check if local_infile is ON
 
-SELECT * FROM online_retail LIMIT 10;
+# Assessing data quality......
+
+DESCRIBE online_retail;    # table structure
+
+SELECT * FROM online_retail LIMIT 10;    # view sample records
+
+SELECT COUNT(*) AS total_records FROM online_retail;   # view total records
+
+
+
